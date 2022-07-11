@@ -2,4 +2,4 @@
 
 This repository shows HackerRank Medium and Hard SQL Questions I answered
 
-[HackerRank Placement Question Link](https://www.hackerrank.com/challenges/placements/problem)
+1. [HackerRank Placement Question Link](https://www.hackerrank.com/challenges/placements/problem)

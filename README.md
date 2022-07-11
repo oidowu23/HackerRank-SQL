@@ -1,3 +1,3 @@
 # HackerRank-SQL
 
-This file shows HackerRank Medium and Hard SQL Questions I answered
+This repository shows HackerRank Medium and Hard SQL Questions I answered

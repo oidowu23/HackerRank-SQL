@@ -1,5 +1,6 @@
-HackerRank Placement Question Link
+HackerRank Placement Question Link:
 
+https://github.com/oidowu23/HackerRank-SQL/blob/34e309579ba6a6c5886bbb0bdd0d21f35d1c2f7e/SQL%20Placement%20Solution#L1
 
 After looking at the question and tables provided, I solved this with these steps:
 1. Created a CTE for All students with their salaries and correspnding best friend id (All_Salary)

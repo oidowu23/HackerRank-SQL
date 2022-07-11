@@ -2,19 +2,19 @@ Question Link:
 
 https://www.hackerrank.com/challenges/placements/problem?isFullScreen=true&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
 
-To solve this question, these were the steps I took:
-1. Created a CTE for All students with their salaries and correspnding best friend id
-2. Next, put all the friends id with their salaries
-3. Lastly, I compared All the Salaries to the Friends salaries using a Row_Number to join both tables
+After looking at the question and tables provided, I solved this with these steps:
+1. Created a CTE for All students with their salaries and correspnding best friend id (All_Salary)
+2. Next, pulled all the friends id with their salaries (BestFriends)
+3. Lastly, I compared All the Salaries to the Friends salaries using a Row_Number (Windown function) to join both tables
 
 
 SOLUTION:
 WITH All_Salary AS
 (
-SELECT p.id,
-        s.name, 
-        p.salary, 
-        f.friend_id -- to show what friend_id is to the friend
+SELECT p.id
+        ,s.name 
+        ,p.salary 
+        ,f.friend_id -- to show what friend_id is to the friend
         , ROW_NUMBER() OVER(ORDER BY p.id) r1 -- this was needed to join this table to the next one in the right order
 FROM Packages p
 JOIN Students s
@@ -24,7 +24,9 @@ ON s.id= f.id
    )
 , BestFriends AS
 (
-SELECT a.friend_id, p.salary AS fsalary, ROW_NUMBER() OVER(ORDER BY a.id) r2
+SELECT a.friend_id
+       , p.salary AS fsalary
+       , ROW_NUMBER() OVER(ORDER BY a.id) r2
 FROM All_Salary a
 JOIN Packages p
 ON a.friend_id=p.id

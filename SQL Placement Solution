@@ -1,6 +1,4 @@
-HackerRank Placement Question Link:
-
-https://www.hackerrank.com/challenges/placements/problem
+[HackerRank Placement Question Link](https://www.hackerrank.com/challenges/placements/problem)
 
 After looking at the question and tables provided, I solved this with these steps:
 1. Created a CTE for All students with their salaries and correspnding best friend id (All_Salary)
